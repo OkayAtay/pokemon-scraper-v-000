@@ -15,10 +15,10 @@ attr_accessor :id, :name, :type, :db, :hp
     db.execute("INSERT INTO pokemon(name, type) VALUES(?,?)", name, type)
   end
 
-  def self.find(id, db, hp)
+  def self.find(id, db, hp=60)
     found_pk = db.execute("SELECT * from pokemon WHERE (id=?)", id)
     found_pk = found_pk.flatten
-    Pokemon.new(id:found_pk[0],name:found_pk[1],type:found_pk[2], db: db, hp: hp)
+    Pokemon.new(id:found_pk[0],name:found_pk[1],type:found_pk[2], db: db)
   end
 
   def alter_hp(new_hp)
