@@ -21,7 +21,7 @@ attr_accessor :id, :name, :type, :db
   end
 
   def alter_hp(new_hp)
-    
+
   end
 
 end
