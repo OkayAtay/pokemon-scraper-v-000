@@ -19,7 +19,7 @@ attr_accessor :id, :name, :type, :db, :hp
     found_pk = db.execute("SELECT * from pokemon WHERE (id=?)", id)
     found_pk = found_pk.flatten
     binding.pry
-    Pokemon.new(id:found_pk[0],name:found_pk[1],type:found_pk[2], db: db)
+    Pokemon.new(id:found_pk[0],name:found_pk[1],type:found_pk[2], db: db, hp: hp)
   end
 
   def alter_hp(new_hp)
