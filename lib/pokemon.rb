@@ -10,9 +10,9 @@ attr_accessor :id, :name, :type, :db, :hp
     @hp = hp
   end
 
-  def self.save(name, type, hp, db)
+  def self.save(name, type, db)
     #binding.pry
-    db.execute("INSERT INTO pokemon(name, type) VALUES(?,?,?)", name, type, hp)
+    db.execute("INSERT INTO pokemon(name, type) VALUES(?,?,?)", name, type)
   end
 
   def self.find(id, db, hp=60)
